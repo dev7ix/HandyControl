@@ -27,7 +27,9 @@ if (Test-Path $outputDir) {
 $packArgs = @(
     "pack", $projectPath,
     "-c", "Release",
-    "-o", $outputDir
+    "-o", $outputDir,
+    "-p:BuildInParallel=false",
+    "-m:1"
 )
 
 if ($Version) {
@@ -37,9 +39,10 @@ if ($Version) {
 }
 
 Write-Host "Packing Dev7ix.HandyControl..."
+Write-Host "Using serialized pack to avoid XamlCombine file-lock conflicts."
 & dotnet @packArgs
 if ($LASTEXITCODE -ne 0) {
-    throw "dotnet pack failed."
+    throw "dotnet pack failed. See the MSBuild output above for the underlying error."
 }
 
 $packages = Get-ChildItem $outputDir -Filter "Dev7ix.HandyControl.*.nupkg" |
