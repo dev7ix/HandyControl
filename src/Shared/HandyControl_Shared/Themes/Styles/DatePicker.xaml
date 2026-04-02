@@ -1,8 +1,6 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:hc="clr-namespace:HandyControl.Controls">
-
-    <Style BasedOn="{StaticResource DatePickerBaseStyle}" TargetType="DatePicker"/>
 
     <Style x:Key="DatePicker.Small" BasedOn="{StaticResource DatePickerBaseStyle}" TargetType="DatePicker">
         <Setter Property="MinHeight" Value="20"/>
@@ -19,8 +17,6 @@
         <Setter Property="Padding" Value="6,0"/>
         <Setter Property="MinHeight" Value="20" />
     </Style>
-
-    <Style BasedOn="{StaticResource DatePickerPlusBaseStyle}" TargetType="hc:DatePicker"/>
 
     <Style x:Key="DatePickerPlus.Small" BasedOn="{StaticResource DatePickerPlusBaseStyle}" TargetType="hc:DatePicker">
         <Setter Property="hc:InfoElement.MinContentHeight" Value="20"/>

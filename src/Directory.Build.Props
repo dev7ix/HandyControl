@@ -5,9 +5,9 @@
         <FileVersion>3.6.0.0</FileVersion>
         <AssemblyVersion>3.6.0.0</AssemblyVersion>
         <LangVersion>latest</LangVersion>
-        <Copyright>Copyright © HandyOrg 2018-2025</Copyright>
-        <Authors>HandyOrg</Authors>
-        <RepositoryUrl>https://github.com/HandyOrg/HandyControl</RepositoryUrl>
-        <PackageProjectUrl>https://handyorg.github.io/</PackageProjectUrl>
+        <Copyright>Copyright © dev7ix and contributors 2018-2026</Copyright>
+        <Authors>dev7ix</Authors>
+        <RepositoryUrl>https://github.com/dev7ix/HandyControl</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/dev7ix/HandyControl</PackageProjectUrl>
     </PropertyGroup>
 </Project>

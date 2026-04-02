@@ -1080,7 +1080,6 @@
 	<Style x:Key="RichTextBoxBaseStyle" BasedOn="{StaticResource TextBoxBaseBaseStyle}" TargetType="RichTextBox">
 		<Setter Property="MinWidth" Value="10" />
 	</Style>
-	<Style BasedOn="{StaticResource RichTextBoxBaseStyle}" TargetType="RichTextBox" />
 	<Style x:Key="MaskRect4ScreenshotStyle" TargetType="Rectangle">
 		<Setter Property="IsHitTestVisible" Value="False" />
 		<Setter Property="Fill" Value="{DynamicResource DarkOpacityBrush}" />
@@ -3164,7 +3163,6 @@
 		<Setter Property="Padding" Value="6,1" />
 		<Setter Property="hc:IconElement.Height" Value="12" />
 	</Style>
-	<Style BasedOn="{StaticResource ButtonDefault}" TargetType="Button" />
 	<Style x:Key="ButtonPrimary" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
 		<Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
@@ -3418,12 +3416,10 @@
 		<Setter Property="FontSize" Value="{StaticResource SubHeadFontSize}" />
 	</Style>
 	<Style x:Key="TextBlockDefaultBold" BasedOn="{StaticResource TextBlockBoldBaseStyle}" TargetType="TextBlock" />
-	<Style BasedOn="{StaticResource HighlightTextBlockBaseStyle}" TargetType="hc:HighlightTextBlock" />
 	<Style x:Key="LabelDefault" BasedOn="{StaticResource LabelBaseStyle}" TargetType="Label">
 		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
 		<Setter Property="BorderThickness" Value="1" />
 	</Style>
-	<Style BasedOn="{StaticResource LabelDefault}" TargetType="Label" />
 	<Style x:Key="LabelDefault.Small" BasedOn="{StaticResource LabelDefault}" TargetType="Label">
 		<Setter Property="Height" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -3463,8 +3459,6 @@
 		<Setter Property="Height" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
 	</Style>
-	<Style BasedOn="{StaticResource CompareSliderBaseStyle}" TargetType="hc:CompareSlider" />
-	<Style BasedOn="{StaticResource PreviewSliderBaseStyle}" TargetType="hc:PreviewSlider" />
 	<Style x:Key="ToggleButtonDefault" BasedOn="{StaticResource ToggleButtonBaseStyle}" TargetType="ToggleButton">
 		<Setter Property="Background" Value="{DynamicResource RegionBrush}" />
 		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
@@ -3482,7 +3476,6 @@
 		<Setter Property="Padding" Value="6,1" />
 		<Setter Property="hc:IconElement.Height" Value="12" />
 	</Style>
-	<Style BasedOn="{StaticResource ToggleButtonDefault}" TargetType="ToggleButton" />
 	<Style x:Key="ToggleButtonPrimary" BasedOn="{StaticResource ToggleButtonBaseStyle}" TargetType="ToggleButton">
 		<Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
@@ -3884,7 +3877,6 @@
 		<Setter Property="Padding" Value="6,1" />
 		<Setter Property="hc:IconElement.Height" Value="12" />
 	</Style>
-	<Style BasedOn="{StaticResource RepeatButtonDefault}" TargetType="RepeatButton" />
 	<Style x:Key="RepeatButtonPrimary" BasedOn="{StaticResource RepeatButtonBaseStyle}" TargetType="RepeatButton">
 		<Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
@@ -4369,8 +4361,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style TargetType="Calendar" BasedOn="{StaticResource CalendarBaseStyle}" />
-	<Style BasedOn="{StaticResource ToggleBlockBaseStyle}" TargetType="hc:ToggleBlock" />
 	<Style x:Key="ToggleBlockIcon" BasedOn="{StaticResource ToggleBlockBaseStyle}" TargetType="hc:ToggleBlock">
 		<Setter Property="Template">
 			<Setter.Value>
@@ -4387,7 +4377,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource GroupBoxBaseStyle}" TargetType="GroupBox" />
 	<Style x:Key="GroupBox.Small" BasedOn="{StaticResource GroupBoxBaseStyle}" TargetType="GroupBox">
 		<Setter Property="hc:TitleElement.MinHeight" Value="20" />
 		<Setter Property="hc:TitleElement.MinWidth" Value="20" />
@@ -4398,7 +4387,6 @@
 		<Setter Property="hc:TitleElement.MinHeight" Value="20" />
 		<Setter Property="hc:TitleElement.MinWidth" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource ButtonGroupBaseStyle}" TargetType="hc:ButtonGroup" />
 	<Style x:Key="ButtonGroupSolid" BasedOn="{StaticResource ButtonGroupBaseStyle}" TargetType="hc:ButtonGroup">
 		<Setter Property="hc:VisualElement.HighlightBorderBrush" Value="{DynamicResource TitleBrush}" />
 		<Setter Property="hc:VisualElement.HighlightBackground" Value="{DynamicResource TitleBrush}" />
@@ -4649,8 +4637,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource CheckBoxBaseStyle}" TargetType="CheckBox" />
-	<Style BasedOn="{StaticResource RadioButtonBaseStyle}" TargetType="RadioButton" />
 	<Style x:Key="RadioButtonSameAsButtonDefault" BasedOn="{StaticResource RadioButtonSameAsButtonBaseStyle}" TargetType="RadioButton">
 		<Setter Property="Background" Value="{DynamicResource RegionBrush}" />
 		<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
@@ -7029,9 +7015,6 @@
 			</Trigger>
 		</Style.Triggers>
 	</Style>
-	<Style BasedOn="{StaticResource TagBaseStyle}" TargetType="hc:Tag" />
-	<Style BasedOn="{StaticResource TagContainerBaseStyle}" TargetType="hc:TagContainer" />
-	<Style BasedOn="{StaticResource SearchBarBaseStyle}" TargetType="hc:SearchBar" />
 	<Style x:Key="SearchBar.Small" BasedOn="{StaticResource SearchBarBaseStyle}" TargetType="hc:SearchBar">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -7054,7 +7037,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource ComboBoxBaseStyle}" TargetType="ComboBox" />
 	<Style x:Key="ComboBoxItem.Small" BasedOn="{StaticResource ComboBoxItemBaseStyle}" TargetType="ComboBoxItem">
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
@@ -7074,7 +7056,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource ComboBoxPlusBaseStyle}" TargetType="hc:ComboBox" />
 	<Style x:Key="ComboBoxPlus.Small" BasedOn="{StaticResource ComboBoxPlusBaseStyle}" TargetType="hc:ComboBox">
 		<Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItem.Small}" />
 		<Setter Property="hc:InfoElement.MinContentHeight" Value="20" />
@@ -7084,8 +7065,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource WatermarkTextBoxBaseStyle}" TargetType="hc:WatermarkTextBox" />
-	<Style BasedOn="{StaticResource TextBoxBaseStyle}" TargetType="TextBox" />
 	<Style x:Key="TextBox.Small" BasedOn="{StaticResource TextBoxBaseStyle}" TargetType="TextBox">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -7099,7 +7078,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource TextBoxPlusBaseStyle}" TargetType="hc:TextBox" />
 	<Style x:Key="TextBoxPlus.Small" BasedOn="{StaticResource TextBoxPlusBaseStyle}" TargetType="hc:TextBox">
 		<Setter Property="hc:InfoElement.MinContentHeight" Value="20" />
 		<Setter Property="hc:InfoElement.ContentHeight" Value="20" />
@@ -7108,8 +7086,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource MenuItemBaseStyle}" TargetType="MenuItem" />
-	<Style BasedOn="{StaticResource MenuBaseStyle}" TargetType="Menu" />
 	<Style x:Key="Menu.Small" BasedOn="{StaticResource MenuBaseStyle}" TargetType="Menu">
 		<Setter Property="hc:MenuAttach.ItemPadding" Value="6,0" />
 		<Setter Property="hc:MenuAttach.ItemMinHeight" Value="{StaticResource DefaultControlHeight}" />
@@ -12309,8 +12285,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style TargetType="hc:CalendarWithClock" BasedOn="{StaticResource CalendarWithClockBaseStyle}" />
-	<Style BasedOn="{StaticResource CardBaseStyle}" TargetType="hc:Card" />
 	<Style x:Key="CarouselPateButton" BasedOn="{StaticResource BaseStyle}" TargetType="RadioButton">
 		<Setter Property="Margin" Value="5,0" />
 		<Setter Property="Width" Value="10" />
@@ -12380,8 +12354,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource ChatBubbleBaseStyle}" TargetType="hc:ChatBubble" />
-	<Style BasedOn="{StaticResource CheckComboBoxBaseStyle}" TargetType="hc:CheckComboBox" />
 	<Style x:Key="CheckComboBoxItem.Small" BasedOn="{StaticResource CheckComboBoxItemBaseStyle}" TargetType="hc:CheckComboBoxItem">
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
@@ -12508,7 +12480,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style TargetType="hc:Clock" BasedOn="{StaticResource ClockBaseStyle}" />
 	<Style x:Key="ClockListBoxItemStyle" TargetType="ListBoxItem" BasedOn="{StaticResource ListBoxItemBaseStyle}">
 		<Style.Triggers>
 			<Trigger Property="IsMouseOver" Value="true">
@@ -12578,17 +12549,12 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style TargetType="hc:ListClock" BasedOn="{StaticResource ListClockBaseStyle}" />
-	<Style BasedOn="{StaticResource ColorPickerBaseStyle}" TargetType="hc:ColorPicker" />
-	<Style BasedOn="{StaticResource ContextMenuBaseStyle}" TargetType="ContextMenu" />
 	<Style x:Key="ContextMenu.Small" BasedOn="{StaticResource ContextMenuBaseStyle}" TargetType="ContextMenu">
 		<Setter Property="hc:MenuAttach.ItemPadding" Value="6,0" />
 		<Setter Property="hc:MenuAttach.ItemMinHeight" Value="20" />
 		<Setter Property="hc:MenuAttach.PopupVerticalOffset" Value="-3" />
 		<Setter Property="hc:MenuAttach.PopupHorizontalOffset" Value="6" />
 	</Style>
-	<Style BasedOn="{StaticResource CoverFlowBaseStyle}" TargetType="hc:CoverFlow" />
-	<Style BasedOn="{StaticResource CoverViewBaseStyle}" TargetType="hc:CoverView" />
 	<Style x:Key="DataGridBaseStyle" TargetType="DataGrid">
 		<Setter Property="Background" Value="{DynamicResource SecondaryRegionBrush}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
@@ -12698,7 +12664,6 @@
 			</MultiTrigger>
 		</Style.Triggers>
 	</Style>
-	<Style BasedOn="{StaticResource DataGridBaseStyle}" TargetType="DataGrid" />
 	<Style x:Key="DataGridCellStyle.Small" BasedOn="{StaticResource DataGridCellStyle}" TargetType="DataGridCell">
 		<Setter Property="Padding" Value="6,0" />
 	</Style>
@@ -12717,7 +12682,6 @@
 		<Setter Property="hc:DataGridAttach.EditingTextColumnStyle" Value="{StaticResource DataGridEditingTextColumnStyle.Small}" />
 		<Setter Property="hc:DataGridAttach.EditingComboBoxColumnStyle" Value="{StaticResource DataGridEditingComboBoxColumnStyle.Small}" />
 	</Style>
-	<Style BasedOn="{StaticResource DatePickerBaseStyle}" TargetType="DatePicker" />
 	<Style x:Key="DatePicker.Small" BasedOn="{StaticResource DatePickerBaseStyle}" TargetType="DatePicker">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -12731,7 +12695,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource DatePickerPlusBaseStyle}" TargetType="hc:DatePicker" />
 	<Style x:Key="DatePickerPlus.Small" BasedOn="{StaticResource DatePickerPlusBaseStyle}" TargetType="hc:DatePicker">
 		<Setter Property="hc:InfoElement.MinContentHeight" Value="20" />
 		<Setter Property="hc:InfoElement.ContentHeight" Value="20" />
@@ -12740,7 +12703,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource DateTimePickerBaseStyle}" TargetType="hc:DateTimePicker" />
 	<Style x:Key="DateTimePicker.Small" BasedOn="{StaticResource DateTimePickerBaseStyle}" TargetType="hc:DateTimePicker">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -12763,27 +12725,15 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource DialogBaseStyle}" TargetType="hc:Dialog" />
-	<Style BasedOn="{StaticResource DividerBaseStyle}" TargetType="hc:Divider" />
-	<Style BasedOn="{StaticResource DrawerBaseStyle}" TargetType="hc:Drawer" />
-	<Style BasedOn="{StaticResource ElementGroupBaseStyle}" TargetType="hc:ElementGroup" />
 	<Style x:Key="ElementGroupSolid" BasedOn="{StaticResource ElementGroupBaseStyle}" TargetType="hc:ElementGroup">
 		<Setter Property="hc:VisualElement.HighlightBorderBrush" Value="{DynamicResource TitleBrush}" />
 		<Setter Property="hc:VisualElement.HighlightBackground" Value="{DynamicResource TitleBrush}" />
 		<Setter Property="hc:VisualElement.HighlightForeground" Value="{DynamicResource TextIconBrush}" />
 	</Style>
-	<Style BasedOn="{StaticResource EmptyBaseStyle}" TargetType="hc:Empty" />
-	<Style BasedOn="{StaticResource ExpanderBaseStyle}" TargetType="Expander" />
 	<Style x:Key="Expander.Small" BasedOn="{StaticResource ExpanderBaseStyle}" TargetType="Expander">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="MinWidth" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource FlowDocumentScrollViewerBaseStyle}" TargetType="FlowDocumentScrollViewer" />
-	<Style BasedOn="{StaticResource FlowDocumentPageViewerBaseStyle}" TargetType="FlowDocumentPageViewer" />
-	<Style BasedOn="{StaticResource FlowDocumentReaderBaseStyle}" TargetType="FlowDocumentReader" />
-	<Style BasedOn="{StaticResource FrameBaseStyle}" TargetType="Frame" />
-	<Style BasedOn="{StaticResource GotoTopBaseStyle}" TargetType="hc:GotoTop" />
-	<Style BasedOn="{StaticResource GravatarBaseStyle}" TargetType="hc:Gravatar" />
 	<Style x:Key="GravatarCircle" BasedOn="{StaticResource GravatarBaseStyle}" TargetType="hc:Gravatar">
 		<Setter Property="Padding" Value="16" />
 		<Setter Property="Template">
@@ -12855,7 +12805,6 @@
 			</Trigger>
 		</Style.Triggers>
 	</Style>
-	<Style BasedOn="{StaticResource ImageSelectorBaseStyle}" TargetType="hc:ImageSelector" />
 	<Style TargetType="hc:ImageViewer">
 		<Setter Property="Focusable" Value="False" />
 		<Setter Property="Background" Value="Transparent" />
@@ -12913,7 +12862,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource ListBoxBaseStyle}" TargetType="ListBox" />
 	<Style x:Key="ListBoxItemBaseStyle.Small" BasedOn="{StaticResource ListBoxItemBaseStyle}" TargetType="ListBoxItem">
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="24" />
@@ -13043,7 +12991,6 @@
 			</Trigger>
 		</Style.Triggers>
 	</Style>
-	<Style BasedOn="{StaticResource ListViewBaseStyle}" TargetType="ListView" />
 	<Style x:Key="ListViewItemBaseStyle.Small" BasedOn="{StaticResource ListViewItemBaseStyle}" TargetType="ListViewItem">
 		<Setter Property="Padding" Value="6,2" />
 		<Setter Property="MinHeight" Value="24" />
@@ -13053,7 +13000,6 @@
 		<Setter Property="ItemContainerStyle" Value="{StaticResource ListViewItemBaseStyle.Small}" />
 		<Setter Property="hc:GridViewAttach.ColumnHeaderHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource LoadingLineBaseStyle}" TargetType="hc:LoadingLine" />
 	<Style x:Key="LoadingLineLight" BasedOn="{StaticResource LoadingLineBaseStyle}" TargetType="hc:LoadingLine">
 		<Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
 	</Style>
@@ -13063,7 +13009,6 @@
 	<Style x:Key="LoadingLineLargeLight" BasedOn="{StaticResource LoadingLineLarge}" TargetType="hc:LoadingLine">
 		<Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
 	</Style>
-	<Style BasedOn="{StaticResource LoadingCircleBaseStyle}" TargetType="hc:LoadingCircle" />
 	<Style x:Key="LoadingCircleLight" BasedOn="{StaticResource LoadingCircleBaseStyle}" TargetType="hc:LoadingCircle">
 		<Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
 	</Style>
@@ -13078,7 +13023,6 @@
 	<Style x:Key="LoadingCircleLargeLight" BasedOn="{StaticResource LoadingCircleLarge}" TargetType="hc:LoadingCircle">
 		<Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
 	</Style>
-	<Style BasedOn="{StaticResource MagnifierBaseStyle}" TargetType="hc:Magnifier" />
 	<Style x:Key="MessageBoxButtonStyle" BasedOn="{StaticResource ButtonDefault}" TargetType="Button">
 		<Setter Property="MinWidth" Value="88" />
 		<Setter Property="Visibility" Value="{Binding IsEnabled,RelativeSource={RelativeSource Self},Converter={StaticResource Boolean2VisibilityConverter}}" />
@@ -13175,8 +13119,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource NavigationWindowBaseStyle}" TargetType="NavigationWindow" />
-	<Style BasedOn="{StaticResource NumericUpDownBaseStyle}" TargetType="hc:NumericUpDown" />
 	<Style x:Key="NumericUpDown.Small" BasedOn="{StaticResource NumericUpDownBaseStyle}" TargetType="hc:NumericUpDown">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -13291,7 +13233,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource PasswordBoxBaseStyle}" TargetType="PasswordBox" />
 	<Style x:Key="PasswordBox.Small" BasedOn="{StaticResource PasswordBoxBaseStyle}" TargetType="PasswordBox">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -13305,7 +13246,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource PasswordBoxPlusBaseStyle}" TargetType="hc:PasswordBox" />
 	<Style x:Key="PasswordBoxPlus.Small" BasedOn="{StaticResource PasswordBoxPlusBaseStyle}" TargetType="hc:PasswordBox">
 		<Setter Property="hc:InfoElement.MinContentHeight" Value="20" />
 		<Setter Property="hc:InfoElement.ContentHeight" Value="20" />
@@ -13314,8 +13254,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource PinBoxBaseStyle}" TargetType="hc:PinBox" />
-	<Style BasedOn="{StaticResource PoptipBaseStyle}" TargetType="hc:Poptip" />
 	<Style TargetType="hc:PopupWindow">
 		<Setter Property="WindowStyle" Value="None" />
 		<Setter Property="MinHeight" Value="220" />
@@ -13402,7 +13340,6 @@
 	<Style x:Key="ProgressButtonDanger" BasedOn="{StaticResource ProgressButtonBaseStyle}" TargetType="hc:ProgressButton">
 		<Setter Property="Background" Value="{DynamicResource DangerBrush}" />
 	</Style>
-	<Style BasedOn="{StaticResource PropertyGridBaseStyle}" TargetType="hc:PropertyGrid" />
 	<Style x:Key="ComboBoxItemCapsuleBaseStyle" BasedOn="{x:Null}" TargetType="ComboBoxItem">
 		<Setter Property="MinWidth" Value="40" />
 		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -13471,7 +13408,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource RateBaseStyle}" TargetType="hc:Rate" />
 	<Style TargetType="hc:RibbonGroup">
 		<Setter Property="Focusable" Value="False" />
 		<Setter Property="Height" Value="90" />
@@ -13598,10 +13534,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource RunningBlockBaseStyle}" TargetType="hc:RunningBlock" />
-	<Style BasedOn="{StaticResource SeparatorBaseStyle}" TargetType="Separator" />
-	<Style BasedOn="{StaticResource ShieldBaseStyle}" TargetType="hc:Shield" />
-	<Style BasedOn="{StaticResource SideMenuBaseStyle}" TargetType="hc:SideMenu" />
 	<Style x:Key="SideMenuAccordion" BasedOn="{StaticResource SideMenuBaseStyle}" TargetType="hc:SideMenu">
 		<Setter Property="ExpandMode" Value="Accordion" />
 		<Setter Property="PanelAreaLength" Value="200" />
@@ -13633,7 +13565,6 @@
 		<Setter Property="Padding" Value="6,1" />
 		<Setter Property="hc:IconElement.Height" Value="12" />
 	</Style>
-	<Style BasedOn="{StaticResource SplitButtonDefault}" TargetType="hc:SplitButton" />
 	<Style x:Key="SplitButtonPrimary" BasedOn="{StaticResource SplitButtonBaseStyle}" TargetType="hc:SplitButton">
 		<Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
 	</Style>
@@ -13674,11 +13605,6 @@
 		<Setter Property="Padding" Value="6,1" />
 		<Setter Property="hc:IconElement.Height" Value="12" />
 	</Style>
-	<Style BasedOn="{StaticResource StatusBarBaseStyle}" TargetType="StatusBar" />
-	<Style BasedOn="{StaticResource StatusBarItemBaseStyle}" TargetType="StatusBarItem" />
-	<Style BasedOn="{StaticResource StepBarBaseStyle}" TargetType="hc:StepBar" />
-	<Style BasedOn="{StaticResource TabControlBaseStyle}" TargetType="TabControl" />
-	<Style BasedOn="{StaticResource TabControlPlusBaseStyle}" TargetType="hc:TabControl" />
 	<Style x:Key="TabItemSliding" TargetType="TabItem">
 		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
@@ -13710,7 +13636,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource SlidingTabContainerBaseStyle}" TargetType="hc:SlidingTabContainer" />
 	<Style x:Key="TabControlSliding" TargetType="TabControl">
 		<Setter Property="BorderThickness" Value="1" />
 		<Setter Property="Background" Value="{DynamicResource SecondaryRegionBrush}" />
@@ -13972,7 +13897,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style BasedOn="{StaticResource TimePickerBaseStyle}" TargetType="hc:TimePicker" />
 	<Style x:Key="TimePicker.Small" BasedOn="{StaticResource TimePickerBaseStyle}" TargetType="hc:TimePicker">
 		<Setter Property="MinHeight" Value="20" />
 		<Setter Property="Padding" Value="6,0" />
@@ -13995,10 +13919,6 @@
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="20" />
 	</Style>
-	<Style BasedOn="{StaticResource ToolBarTrayBaseStyle}" TargetType="ToolBarTray" />
-	<Style BasedOn="{StaticResource ToolBarBaseStyle}" TargetType="ToolBar" />
-	<Style BasedOn="{StaticResource ToolTipBaseStyle}" TargetType="ToolTip" />
-	<Style BasedOn="{StaticResource TransferBaseStyle}" TargetType="hc:Transfer" />
 	<Style x:Key="TransferItemBaseStyle.Small" BasedOn="{StaticResource TransferItemBaseStyle}" TargetType="hc:TransferItem">
 		<Setter Property="Padding" Value="6 0" />
 		<Setter Property="MinHeight" Value="24" />
@@ -14042,8 +13962,6 @@
 	<Style x:Key="Transfer.CheckBox.Small" BasedOn="{StaticResource TransferBaseStyle}" TargetType="hc:Transfer">
 		<Setter Property="ItemContainerStyle" Value="{StaticResource TransferItemBaseStyle.CheckBox.Small}" />
 	</Style>
-	<Style BasedOn="{StaticResource TreeViewItemBaseStyle}" TargetType="TreeViewItem" />
-	<Style BasedOn="{StaticResource TreeViewBaseStyle}" TargetType="TreeView" />
 	<Style x:Key="TreeViewItemBaseStyle.Small" BasedOn="{StaticResource TreeViewItemBaseStyle}" TargetType="TreeViewItem">
 		<Setter Property="Padding" Value="6,0" />
 		<Setter Property="MinHeight" Value="24" />
@@ -14051,8 +13969,6 @@
 	<Style x:Key="TreeView.Small" BasedOn="{StaticResource TreeViewBaseStyle}" TargetType="TreeView">
 		<Setter Property="ItemContainerStyle" Value="{StaticResource TreeViewItemBaseStyle.Small}" />
 	</Style>
-	<Style BasedOn="{StaticResource WatermarkBaseStyle}" TargetType="hc:Watermark" />
-	<Style BasedOn="{StaticResource AutoCompleteTextBoxBaseStyle}" TargetType="hc:AutoCompleteTextBox" />
 	<ControlTemplate x:Key="TipSliderThumbHorizontalTop" TargetType="Thumb">
 		<hc:AxleCanvas>
 			<Label Name="LabelValue" IsHitTestVisible="False" Opacity="0" Canvas.Bottom="28" Style="{StaticResource LabelPrimary}" Content="{Binding Value,RelativeSource={RelativeSource AncestorType=Slider}}" ContentStringFormat="{Binding Path=(hc:TipElement.StringFormat),RelativeSource={RelativeSource AncestorType=Slider}}" />
@@ -14549,6 +14465,4 @@
 			</Trigger>
 		</Style.Triggers>
 	</Style>
-	<Style BasedOn="{StaticResource RangeSliderBaseStyle}" TargetType="hc:RangeSlider" />
-	<Style BasedOn="{StaticResource SliderBaseStyle}" TargetType="Slider" />
 </ResourceDictionary>

@@ -1,12 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="LabelDefault" BasedOn="{StaticResource LabelBaseStyle}" TargetType="Label">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
     </Style>
-
-    <Style BasedOn="{StaticResource LabelDefault}" TargetType="Label" />
 
     <Style x:Key="LabelDefault.Small" BasedOn="{StaticResource LabelDefault}" TargetType="Label">
         <Setter Property="Height" Value="20" />

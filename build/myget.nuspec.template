@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>HandyControl</id>
+    <id>Dev7ix.HandyControl</id>
     <version>{version}</version>
-    <title>HandyControl</title>
-    <authors>HandyOrg</authors>
-    <owners>HandyOrg</owners>
+    <title>Dev7ix.HandyControl</title>
+    <authors>dev7ix</authors>
+    <owners>dev7ix</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="file">LICENSE</license>
     <icon>icon.png</icon>
-    <projectUrl>https://github.com/HandyOrg/HandyControl</projectUrl>
+    <projectUrl>https://github.com/dev7ix/HandyControl</projectUrl>
     <description>Contains some simple and commonly used WPF controls</description>
-    <copyright>Copyright © HandyOrg 2018-{year}</copyright>
+    <copyright>Copyright © dev7ix and contributors 2018-{year}</copyright>
     <tags>WPF C# Control</tags>
     <dependencies />
   </metadata>

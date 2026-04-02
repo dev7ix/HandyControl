@@ -1,7 +1,3 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-
-    <Style BasedOn="{StaticResource ToolBarTrayBaseStyle}" TargetType="ToolBarTray"/>
-
-    <Style BasedOn="{StaticResource ToolBarBaseStyle}" TargetType="ToolBar"/>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
 </ResourceDictionary>

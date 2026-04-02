@@ -4,19 +4,25 @@
     <RootNamespace>HandyControl</RootNamespace>
     <TargetFramework>net40</TargetFramework>
     <Description>Contains some simple and commonly used WPF controls</Description>
-    <PackageId>HandyControl</PackageId>
+    <PackageId>Dev7ix.HandyControl</PackageId>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <NoWarn>0067;0649;1591;0108;1717</NoWarn>
     <AssemblyOriginatorKeyFile>..\..\Shared\HandyControl_Shared\key.snk</AssemblyOriginatorKeyFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>WPF C# Control</PackageTags>
-    <PackageReleaseNotes>Changes are detailed at https://github.com/HandyOrg/HandyControl/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>Changes are detailed at https://github.com/dev7ix/HandyControl/releases</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net40|AnyCPU' ">
     <SignAssembly>true</SignAssembly>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HandyControl.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE" Pack="true" PackagePath="" Link="LICENSE" />
+    <None Include="..\..\..\build\icon.png" Pack="true" PackagePath="" Link="icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.Designer.cs">
       <Link>Properties\Langs\Lang.Designer.cs</Link>

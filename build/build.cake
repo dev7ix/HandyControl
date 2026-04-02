@@ -14,11 +14,14 @@ using static System.IO.File;
 using static System.IO.Path;
 
 const string HandyControlBirthYear = "2018";
+const string PackageId = "Dev7ix.HandyControl";
+const string PackageIdPrefix = "Dev7ix.HandyControl";
+const string GitHubOwner = "dev7ix";
+const string GitHubRepository = "HandyControl";
 const string TagPrefix = "v";
 const string RepositoryFolder = "..";
 const string LibNuspecTemplateFilePath = "lib.nuspec.template";
 const string LangNuspecTemplateFilePath = "lang.nuspec.template";
-const string InstallerNuspecTemplateFilePath = "installer.nuspec.template";
 const string ConfigFilePath = "build.config.xml";
 const string NugetSourceUrl = "https://api.nuget.org/v3/index.json";
 
@@ -33,18 +36,14 @@ var githubToken = Argument("github-token", "");
 var libVersion = "";
 var nugetVersion = "";
 var nugetFolder = "";
-var installerFolder = "";
 var year = $"{DateTime.Now.Year}";
-var copyright = $"Copyright © HandyOrg {HandyControlBirthYear}-{year}";
+var copyright = $"Copyright © dev7ix and contributors {HandyControlBirthYear}-{year}";
 var libNuspecFilePath = "";
 var langNuspecFilePath = "";
-var installerNuspecFilePath = "";
-var squirrelExePath = "";
 var gitRootPath = GitFindRootFromPath(MakeAbsolute(new DirectoryPath("."))).FullPath;
 var propsFilePath = Combine(gitRootPath, "src/Directory.Build.Props");
 var licenseFilePath = Combine(gitRootPath, "LICENSE");
 var resxFileFolder = Combine(gitRootPath, "src/Shared/HandyControl_Shared/Properties/Langs");
-var iconFilePath = Combine(gitRootPath, "src/Shared/HandyControlDemo_Shared/Resources/Img/icon.ico");
 var buildConfig = new BuildConfig();
 
 Setup(context =>
@@ -52,15 +51,11 @@ Setup(context =>
     buildConfig = LoadBuildConfig();
 
     nugetFolder = Combine(buildConfig.OutputsFolder, "nuget");
-    installerFolder = Combine(buildConfig.OutputsFolder, "installer");
-
     libNuspecFilePath = Combine(nugetFolder, GetFileNameWithoutExtension(LibNuspecTemplateFilePath));
     langNuspecFilePath = Combine(nugetFolder, LangNuspecTemplateFilePath);
-    installerNuspecFilePath = Combine(nugetFolder, InstallerNuspecTemplateFilePath);
 
     CleanDirectory(buildConfig.OutputsFolder);
     CreateDirectory(nugetFolder);
-    CreateDirectory(installerFolder);
 
     context.Information($"preReleasePhase: {preReleasePhase}");
     context.Information($"preRelease: {preRelease}");
@@ -74,9 +69,6 @@ Setup(context =>
 
     Copy(LibNuspecTemplateFilePath, libNuspecFilePath, true);
     Copy(LangNuspecTemplateFilePath, langNuspecFilePath, true);
-    Copy(InstallerNuspecTemplateFilePath, installerNuspecFilePath, true);
-
-    DownloadSquirrelTools();
 });
 
 #region TASKS
@@ -107,7 +99,6 @@ Task("update version")
     {
         ReplaceFileText(libNuspecFilePath, "version", nugetVersion);
         ReplaceFileText(langNuspecFilePath, "version", nugetVersion);
-        ReplaceFileText(installerNuspecFilePath, "version", nugetVersion);
     }
 });
 
@@ -120,7 +111,6 @@ Task("update copyright")
 
     ReplaceFileText(libNuspecFilePath, "year", year);
     ReplaceFileText(langNuspecFilePath, "year", year);
-    ReplaceFileText(installerNuspecFilePath, "year", year);
 });
 
 Task("commit files")
@@ -167,7 +157,6 @@ Task("update nuget sha")
 
     ReplaceFileText(libNuspecFilePath, "commit", lastCommit.Sha);
     ReplaceFileText(langNuspecFilePath, "commit", lastCommit.Sha);
-    ReplaceFileText(installerNuspecFilePath, "commit", lastCommit.Sha);
 });
 
 Task("add nuget dependencies")
@@ -236,34 +225,6 @@ Task("build lib")
     }
 });
 
-Task("build demo")
-    .Does(() =>
-{
-    foreach (var task in buildConfig.BuildTasks)
-    {
-        if (!task.BuildDemo)
-        {
-            continue;
-        }
-
-        var dotNetBuildSettings = new DotNetBuildSettings
-        {
-            Configuration = task.Configuration,
-            Framework = task.Framework,
-            OutputDirectory = $"{buildConfig.OutputsFolder}/demo/{task.OutputsFolder}",
-            // remove pdb files
-            ArgumentCustomization = args => args
-                .Append("/p:DebugType=none")
-        };
-
-        DotNetBuild
-        (
-            $"{gitRootPath}/src/{task.Domain}/HandyControlDemo_{task.Domain}/HandyControlDemo_{task.Domain}.csproj",
-            dotNetBuildSettings
-        );
-    }
-});
-
 Task("create lang nuspec files")
     .Does(() =>
 {
@@ -273,24 +234,6 @@ Task("create lang nuspec files")
     {
         string langFilePath = Combine(nugetFolder, $"lang.{lang}.nuspec");
         WriteAllText(langFilePath, templateContent.Replace("{lang}", lang));
-    }
-});
-
-Task("create installer nuspec files")
-    .Does(() =>
-{
-    string templateContent = ReadAllText(installerNuspecFilePath, Encoding.UTF8);
-
-    foreach (var task in buildConfig.BuildTasks)
-    {
-        string installerFilePath = Combine(nugetFolder, $"installer.{task.Framework.Replace(".", "")}.nuspec");
-        WriteAllText(installerFilePath, templateContent.Replace("{framework}", task.Framework.Replace(".", "")));
-
-        XmlDocument installerDocument = LoadXmlDocument(installerFilePath);
-        var demoFolder = $@"demo\{task.OutputsFolder}";
-        // Squirrel is expecting a single lib / net45 directory provided regardless of whether your app is a net45 application.
-        AddFile(installerDocument, $@"{demoFolder}\**\*", @"lib\net45");
-        SaveXmlDocument(installerDocument, installerFilePath, indentation: 2);
     }
 });
 
@@ -305,31 +248,6 @@ Task("pack nuspec files")
         StartProcess(nugetExePath, $"pack {nuspecFilePath} -OutputDirectory {nugetFolder}");
     }
 
-    foreach (string nuspecFilePath in GetAllInstallerNuspecFilePaths())
-    {
-        StartProcess(nugetExePath, $"pack {nuspecFilePath} -OutputDirectory {nugetFolder}");
-    }
-});
-
-Task("create demo installers")
-    .Does(() =>
-{
-    if (!FileExists(squirrelExePath))
-    {
-        throw new Exception("Squirrel.exe not found.");
-    }
-
-    foreach (var task in buildConfig.BuildTasks)
-    {
-        Information(task.Framework);
-
-        string releaseDir = Combine(installerFolder, task.OutputsFolder);
-        CreateDirectory(releaseDir);
-
-        string installerFilePath = Combine(nugetFolder, $"HandyControlDemo-{task.Framework.Replace(".", "")}.{nugetVersion}.nupkg");
-        var cmd = $"--releasify {installerFilePath} --releaseDir {releaseDir} --setupIcon {iconFilePath} --icon {iconFilePath} --no-msi --no-delta";
-        StartProcess(squirrelExePath, cmd);
-    }
 });
 
 Task("push to nuget")
@@ -340,7 +258,7 @@ Task("push to nuget")
         throw new Exception("NuGet token is required!");
     }
 
-    var packages = GetFiles("../build/outputs/nuget/HandyControl.*nupkg");
+    var packages = GetFiles($"../build/outputs/nuget/{PackageIdPrefix}.*nupkg");
     NuGetPush(packages, new NuGetPushSettings
     {
         ApiKey = nugetToken,
@@ -358,9 +276,9 @@ Task("create github release")
         /// The access token or password to use for authentication.
         apiToken: githubToken,
         // The owner (user or group) of the repository to create a release in.
-        owner: "HandyOrg",
+        owner: GitHubOwner,
         /// The name of the repository to create a release in.
-        repository: "HandyControl",
+        repository: GitHubRepository,
         /// The name of the tag to create a release for.
         /// If the tag does not yet exist, a new tag will be created (using either the HEAD of the default branch or the commit specified in the settings).
         /// If the tag already exists, the existing tag will be used and the commit specified in the settings will be ignored.
@@ -371,7 +289,6 @@ Task("create github release")
             Body = ReadAllText(Combine(buildConfig.OutputsFolder, "CHANGELOG.md"), Encoding.UTF8),
             Prerelease = preRelease,
             Overwrite = false,
-            Assets = GetFiles("../build/outputs/installer/net40/*").ToArray(),
         }
     );
 });
@@ -387,18 +304,14 @@ Task("publish")
     .IsDependentOn("add nuget dependencies")
     .IsDependentOn("add nuget files")
     .IsDependentOn("build lib")
-    .IsDependentOn("build demo")
     .IsDependentOn("create lang nuspec files")
-    .IsDependentOn("create installer nuspec files")
     .IsDependentOn("pack nuspec files")
-    .IsDependentOn("create demo installers")
     .IsDependentOn("push to nuget")
     .IsDependentOn("create github release")
     ;
 
 Task("build")
     .IsDependentOn("build lib")
-    .IsDependentOn("build demo")
     ;
 
 RunTarget(target);
@@ -524,8 +437,6 @@ private IEnumerable<string> GetAllLangs()
     }
 }
 
-private IEnumerable<string> GetAllInstallerNuspecFilePaths() => EnumerateFiles(nugetFolder, "installer.*.nuspec");
-
 private IEnumerable<string> GetAllLangNuspecFilePaths() => EnumerateFiles(nugetFolder, "lang.*.nuspec");
 
 private BuildConfig LoadBuildConfig()
@@ -559,18 +470,6 @@ private BuildConfig LoadBuildConfig()
     }
 
     return buildConfig;
-}
-
-private void DownloadSquirrelTools()
-{
-    const string url = "https://www.nuget.org/api/v2/package/squirrel.windows/2.0.1";
-
-    var nupkgFilePath = Combine("tools", "squirrel.windows.2.0.1.nupkg");
-    var toolFolderPath = Combine("tools", "squirrel.windows.2.0.1");
-
-    DownloadFile(url, nupkgFilePath);
-    Unzip(nupkgFilePath, toolFolderPath, true);
-    squirrelExePath = Combine(toolFolderPath, "tools", "Squirrel.exe");
 }
 
 #endregion

@@ -1,8 +1,6 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:hc="clr-namespace:HandyControl.Controls">
-
-    <Style BasedOn="{StaticResource NumericUpDownBaseStyle}" TargetType="hc:NumericUpDown"/>
 
     <Style x:Key="NumericUpDown.Small" BasedOn="{StaticResource NumericUpDownBaseStyle}" TargetType="hc:NumericUpDown">
         <Setter Property="MinHeight" Value="20"/>
