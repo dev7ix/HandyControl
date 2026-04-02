@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>HandyControl</AssemblyName>
     <RootNamespace>HandyControl</RootNamespace>
-    <TargetFrameworks>netcoreapp3.0;netcoreapp3.1;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;net481;net5.0-windows;net6.0-windows;net7.0-windows;net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
+    <TargetFrameworks>net462;net472;net481;net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
     <Description>Contains some simple and commonly used WPF controls</Description>
     <PackageId>Dev7ix.HandyControl</PackageId>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -15,6 +15,8 @@
     <PackageTags>WPF C# Control</PackageTags>
     <PackageReleaseNotes>Changes are detailed at https://github.com/dev7ix/HandyControl/releases</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
+    <BuildInParallel>false</BuildInParallel>
+    <BuildProjectReferencesInParallel>false</BuildProjectReferencesInParallel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <SignAssembly>true</SignAssembly>
