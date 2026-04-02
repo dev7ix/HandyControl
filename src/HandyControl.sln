@@ -3,17 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandyControl_Net_GE45", "Net_GE45\HandyControl_Net_GE45\HandyControl_Net_GE45.csproj", "{DC966E3D-BCFF-4652-98CF-070E5494749A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net_GE45", "Net_GE45", "{2F551C62-77F7-4FA5-8AD7-FCF53E92AE08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandyControl", "HandyControl\HandyControl.csproj", "{DC966E3D-BCFF-4652-98CF-070E5494749A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0938270D-E9F0-489B-AF9E-5C5AD7C69897}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HandyControl_Shared", "Shared\HandyControl_Shared\HandyControl_Shared.shproj", "{AAC11083-FACA-405D-9197-5C1212D65656}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net_40", "Net_40", "{35E3F9C0-8924-4536-BE09-F3761FDBF066}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandyControl_Net_40", "Net_40\HandyControl_Net_40\HandyControl_Net_40.csproj", "{32204503-2EF0-4681-AE13-AA1FEB6C658A}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.Windows.Shell", "Shared\Microsoft.Windows.Shell\Microsoft.Windows.Shell.shproj", "{BBE51380-8B21-49FF-9CFC-B29447A40999}"
 EndProject
@@ -30,32 +24,20 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.Expression.Intera
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug-Net40|Any CPU = Debug-Net40|Any CPU
 		Debug-Net-GE45|Any CPU = Debug-Net-GE45|Any CPU
-		Release-Net40|Any CPU = Release-Net40|Any CPU
 		Release-Net-GE45|Any CPU = Release-Net-GE45|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC966E3D-BCFF-4652-98CF-070E5494749A}.Debug-Net40|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC966E3D-BCFF-4652-98CF-070E5494749A}.Debug-Net-GE45|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC966E3D-BCFF-4652-98CF-070E5494749A}.Debug-Net-GE45|Any CPU.Build.0 = Debug|Any CPU
-		{DC966E3D-BCFF-4652-98CF-070E5494749A}.Release-Net40|Any CPU.ActiveCfg = Release|Any CPU
 		{DC966E3D-BCFF-4652-98CF-070E5494749A}.Release-Net-GE45|Any CPU.ActiveCfg = Release|Any CPU
 		{DC966E3D-BCFF-4652-98CF-070E5494749A}.Release-Net-GE45|Any CPU.Build.0 = Release|Any CPU
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A}.Debug-Net40|Any CPU.ActiveCfg = Debug|Any CPU
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A}.Debug-Net40|Any CPU.Build.0 = Debug|Any CPU
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A}.Debug-Net-GE45|Any CPU.ActiveCfg = Debug|Any CPU
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A}.Release-Net40|Any CPU.ActiveCfg = Release|Any CPU
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A}.Release-Net40|Any CPU.Build.0 = Release|Any CPU
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A}.Release-Net-GE45|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DC966E3D-BCFF-4652-98CF-070E5494749A} = {2F551C62-77F7-4FA5-8AD7-FCF53E92AE08}
 		{AAC11083-FACA-405D-9197-5C1212D65656} = {0938270D-E9F0-489B-AF9E-5C5AD7C69897}
-		{32204503-2EF0-4681-AE13-AA1FEB6C658A} = {35E3F9C0-8924-4536-BE09-F3761FDBF066}
 		{BBE51380-8B21-49FF-9CFC-B29447A40999} = {0938270D-E9F0-489B-AF9E-5C5AD7C69897}
 		{E5DC7C25-6293-4660-B5FB-186496386B90} = {0938270D-E9F0-489B-AF9E-5C5AD7C69897}
 		{6F0C9CFF-2269-46A7-9664-478354C582A4} = {0938270D-E9F0-489B-AF9E-5C5AD7C69897}
@@ -65,11 +47,6 @@ Global
 		SolutionGuid = {D4636382-1A18-4079-A3E7-054DD970F179}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Shared\HandyControl_Shared\HandyControl_Shared.projitems*{32204503-2ef0-4681-ae13-aa1feb6c658a}*SharedItemsImports = 5
-		Shared\Microsoft.Expression.Drawing\Microsoft.Expression.Drawing.projitems*{32204503-2ef0-4681-ae13-aa1feb6c658a}*SharedItemsImports = 5
-		Shared\Microsoft.Expression.Interactions\Microsoft.Expression.Interactions.projitems*{32204503-2ef0-4681-ae13-aa1feb6c658a}*SharedItemsImports = 5
-		Shared\Microsoft.Windows.Shell\Microsoft.Windows.Shell.projitems*{32204503-2ef0-4681-ae13-aa1feb6c658a}*SharedItemsImports = 5
-		Shared\System.Windows.Interactivity\System.Windows.Interactivity.projitems*{32204503-2ef0-4681-ae13-aa1feb6c658a}*SharedItemsImports = 5
 		Shared\Microsoft.Expression.Interactions\Microsoft.Expression.Interactions.projitems*{3531857c-28fc-4e0f-82d9-bfbb70740e04}*SharedItemsImports = 13
 		Shared\System.Windows.Interactivity\System.Windows.Interactivity.projitems*{6f0c9cff-2269-46a7-9664-478354c582a4}*SharedItemsImports = 13
 		Shared\HandyControl_Shared\HandyControl_Shared.projitems*{aac11083-faca-405d-9197-5c1212d65656}*SharedItemsImports = 13

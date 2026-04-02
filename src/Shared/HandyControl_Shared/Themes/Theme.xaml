@@ -13560,6 +13560,7 @@
 			</Trigger>
 		</Style.Triggers>
 	</Style>
+	<Style BasedOn="{StaticResource SplitButtonDefault}" TargetType="hc:SplitButton" />
 	<Style x:Key="SplitButtonDefault.Small" BasedOn="{StaticResource SplitButtonDefault}" TargetType="hc:SplitButton">
 		<Setter Property="Height" Value="20" />
 		<Setter Property="Padding" Value="6,1" />

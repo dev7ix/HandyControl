@@ -8,7 +8,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <NoWarn>0067;0649;1591;MSB3061;SYSLIB0003;SYSLIB0004;SYSLIB0032;CA2022</NoWarn>
     <MSBuildWarningsAsMessages>NETSDK1138</MSBuildWarningsAsMessages>
-    <AssemblyOriginatorKeyFile>..\..\Shared\HandyControl_Shared\key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Shared\HandyControl_Shared\key.snk</AssemblyOriginatorKeyFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
@@ -21,17 +21,17 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HandyControl.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="..\..\..\LICENSE" Pack="true" PackagePath="" Link="LICENSE" />
-    <None Include="..\..\..\build\icon.png" Pack="true" PackagePath="" Link="icon.png" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="" Link="LICENSE" />
+    <None Include="..\..\build\icon.png" Pack="true" PackagePath="" Link="icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.Designer.cs">
+    <Compile Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.Designer.cs">
       <Link>Properties\Langs\Lang.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
-    <Compile Include="..\..\Shared\HandyControl_Shared\Properties\Langs\LangProvider.cs">
+    <Compile Include="..\Shared\HandyControl_Shared\Properties\Langs\LangProvider.cs">
       <Link>Properties\Langs\LangProvider.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -39,62 +39,62 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.tr.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.tr.resx">
       <Link>Properties\Langs\Lang.tr.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.ca-ES.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.ca-ES.resx">
       <Link>Properties\Langs\Lang.ca-ES.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.cs.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.cs.resx">
       <Link>Properties\Langs\Lang.cs.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.en.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.en.resx">
       <Link>Properties\Langs\Lang.en.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.es.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.es.resx">
       <Link>Properties\Langs\Lang.es.resx</Link>
     </EmbeddedResource>
-      <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.fa.resx">
+      <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.fa.resx">
       <Link>Properties\Langs\Lang.fa.resx</Link>
     </EmbeddedResource>
-      <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.fr.resx">
+      <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.fr.resx">
       <Link>Properties\Langs\Lang.fr.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.ja.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.ja.resx">
       <Link>Properties\Langs\Lang.ja.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.ko-KR.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.ko-KR.resx">
       <Link>Properties\Langs\Lang.ko-KR.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.pl.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.pl.resx">
       <Link>Properties\Langs\Lang.pl.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.pt-BR.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.pt-BR.resx">
       <Link>Properties\Langs\Lang.pt-BR.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.ru.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.ru.resx">
       <Link>Properties\Langs\Lang.ru.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.resx">
+    <EmbeddedResource Include="..\Shared\HandyControl_Shared\Properties\Langs\Lang.resx">
       <Link>Properties\Langs\Lang.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="..\..\Shared\HandyControl_Shared\Properties\AssemblyInfo.cs">
+    <Compile Include="..\Shared\HandyControl_Shared\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\Shared\HandyControl_Shared\Properties\Langs\LangProvider.tt">
+    <Content Include="..\Shared\HandyControl_Shared\Properties\Langs\LangProvider.tt">
       <Link>Properties\Langs\LangProvider.tt</Link>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LangProvider.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <Import Project="..\..\Shared\HandyControl_Shared\HandyControl_Shared.projitems" Label="Shared" />
-  <Import Project="..\..\Shared\Microsoft.Expression.Drawing\Microsoft.Expression.Drawing.projitems" Label="Shared" />
-  <Import Project="..\..\Shared\System.Windows.Interactivity\System.Windows.Interactivity.projitems" Label="Shared" />
-  <Import Project="..\..\Shared\Microsoft.Expression.Interactions\Microsoft.Expression.Interactions.projitems" Label="Shared" />
+  <Import Project="..\Shared\HandyControl_Shared\HandyControl_Shared.projitems" Label="Shared" />
+  <Import Project="..\Shared\Microsoft.Expression.Drawing\Microsoft.Expression.Drawing.projitems" Label="Shared" />
+  <Import Project="..\Shared\System.Windows.Interactivity\System.Windows.Interactivity.projitems" Label="Shared" />
+  <Import Project="..\Shared\Microsoft.Expression.Interactions\Microsoft.Expression.Interactions.projitems" Label="Shared" />
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
       <PrivateAssets>all</PrivateAssets>
@@ -102,78 +102,78 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\dropper.cur">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\dropper.cur">
       <Link>Resources\dropper.cur</Link>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Effects\BrightnessEffect.ps">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Effects\BrightnessEffect.ps">
       <Link>Resources\Effects\BrightnessEffect.ps</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Effects\ColorComplementEffect.ps">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Effects\ColorComplementEffect.ps">
       <Link>Resources\Effects\ColorComplementEffect.ps</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Effects\ColorMatrixEffect.ps">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Effects\ColorMatrixEffect.ps">
       <Link>Resources\Effects\ColorMatrixEffect.ps</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Effects\ContrastEffect.ps">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Effects\ContrastEffect.ps">
       <Link>Resources\Effects\ContrastEffect.ps</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Effects\GrayScaleEffect.ps">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Effects\GrayScaleEffect.ps">
       <Link>Resources\Effects\GrayScaleEffect.ps</Link>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\bottom.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\bottom.png">
       <Link>Resources\Images\GlowWindow\bottom.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\bottomleft.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\bottomleft.png">
       <Link>Resources\Images\GlowWindow\bottomleft.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\bottomright.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\bottomright.png">
       <Link>Resources\Images\GlowWindow\bottomright.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornerbottomleft.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornerbottomleft.png">
       <Link>Resources\Images\GlowWindow\cornerbottomleft.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornerbottomright.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornerbottomright.png">
       <Link>Resources\Images\GlowWindow\cornerbottomright.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornertopleft.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornertopleft.png">
       <Link>Resources\Images\GlowWindow\cornertopleft.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornertopright.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\cornertopright.png">
       <Link>Resources\Images\GlowWindow\cornertopright.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\left.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\left.png">
       <Link>Resources\Images\GlowWindow\left.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\leftbottom.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\leftbottom.png">
       <Link>Resources\Images\GlowWindow\leftbottom.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\lefttop.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\lefttop.png">
       <Link>Resources\Images\GlowWindow\lefttop.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\right.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\right.png">
       <Link>Resources\Images\GlowWindow\right.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\rightbottom.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\rightbottom.png">
       <Link>Resources\Images\GlowWindow\rightbottom.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\righttop.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\righttop.png">
       <Link>Resources\Images\GlowWindow\righttop.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\top.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\top.png">
       <Link>Resources\Images\GlowWindow\top.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\topleft.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\topleft.png">
       <Link>Resources\Images\GlowWindow\topleft.png</Link>
     </Resource>
-    <Resource Include="..\..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\topright.png">
+    <Resource Include="..\Shared\HandyControl_Shared\Resources\Images\GlowWindow\topright.png">
       <Link>Resources\Images\GlowWindow\topright.png</Link>
     </Resource>
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="..\..\Shared\HandyControl_Shared\Themes\XamlCombine.exe ..\..\Shared\HandyControl_Shared\Themes\Theme_GE45.txt Theme.xaml" />
+    <Exec Command="..\Shared\HandyControl_Shared\Themes\XamlCombine.exe ..\Shared\HandyControl_Shared\Themes\Theme_GE45.txt Theme.xaml" />
   </Target>
 </Project>

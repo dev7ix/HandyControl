@@ -214,7 +214,7 @@ Task("build lib")
 
         DotNetBuild
         (
-            $"{gitRootPath}/src/{task.Domain}/HandyControl_{task.Domain}/HandyControl_{task.Domain}.csproj",
+            Combine(gitRootPath, task.ProjectPath),
             new DotNetBuildSettings
             {
                 Configuration = task.Configuration,
@@ -458,7 +458,8 @@ private BuildConfig LoadBuildConfig()
                 Target = node.Attributes["target"].Value,
                 OutputsFolder = node.Attributes["outputsFolder"].Value,
                 Configuration = node.Attributes["configuration"].Value,
-                Domain = node.Attributes["domain"].Value,
+                Domain = node.Attributes["domain"]?.Value,
+                ProjectPath = node.Attributes["projectPath"]?.Value,
                 BuildLib = bool.Parse(node.Attributes["buildLib"].Value),
                 BuildDemo = bool.Parse(node.Attributes["buildDemo"].Value),
             });
@@ -494,6 +495,8 @@ public class BuildTask
     public string Configuration { get; set; }
 
     public string Domain { get; set; }
+
+    public string ProjectPath { get; set; }
 
     public bool BuildLib { get; set; }
 

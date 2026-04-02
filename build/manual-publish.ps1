@@ -9,7 +9,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$projectPath = Join-Path $repoRoot "src\Net_GE45\HandyControl_Net_GE45\HandyControl_Net_GE45.csproj"
+$projectPath = Join-Path $repoRoot "src\HandyControl\HandyControl.csproj"
 $outputDir = Join-Path $repoRoot "build\outputs\manual-pack"
 
 if (-not $ApiKey) {
